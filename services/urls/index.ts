@@ -12,8 +12,7 @@ export const createShortnedUrl = async(data:ICreateShortUrlForm) => {
             response = request.data.shortUrl
         }
     } catch (error) {
-        {/* @ts-expect-error */ }
-        console.log(error.response.data)
+        console.log(error)
     }
     
     return response;

@@ -16,7 +16,7 @@ const ShortnedURL = ({ shortnedUrl = "No URL provided" }: IShortnedURL) => {
     }
     return (
         <div className="bg-[#ffffff] border border-gray-200 rounded-md px-4 py-3">
-            <p className="font-medium text-gray-700 ">Your shortened URL:</p>
+            <p className="font-medium text-gray-700 ">Your shortened URL</p>
             <div className="mt-2 flex items-center space-x-2">
                 <div className="text-indigo-600 flex-grow overflow-hidden overflow-ellipsis max-w-[160px]">
                     <TooltipProvider>

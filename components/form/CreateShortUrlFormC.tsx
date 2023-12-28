@@ -7,11 +7,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { createShortUrlFormSchema } from '@/schemas/url';
 import { z } from 'zod';
 import ShortnedURL from '../ShortnedURL';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { IStateForm } from '@/interfaces';
 import { formReducer } from '@/reducers/form/formReducer';
-import { Check, XIcon } from 'lucide-react';
+import { Check, X, XIcon } from 'lucide-react';
 import { LoadingSpinner } from '../ui/loadingspinner';
+import toast from 'react-hot-toast';
 
 interface ICreateShortUrlFormC {
     onFormSend: (values: unknown) => string | null;
@@ -46,11 +47,21 @@ const CreateShortUrlFormC = ({ onFormSend }: ICreateShortUrlFormC) => {
             dispatch({type: 'set_shortned_url', payload: response})
             dispatch({type: 'send_form'})
         }else{
+            toast.error("Oops, something went wrong. Please retry in 2 seconds.")
             dispatch({type: 'set_error'})
           
         }
         dispatch({type: 'end_loading'})
     }
+
+    useEffect(() => {
+        if(error){
+            setTimeout(() => {
+                dispatch({type: 'remove_error'})
+            }, 2000)
+        }
+        
+    }, [error])
 
     return (
             <div>
@@ -70,13 +81,16 @@ const CreateShortUrlFormC = ({ onFormSend }: ICreateShortUrlFormC) => {
                     />
                     <Button className="w-full" type="submit">
                         {
-                            !hasSentForm && !isLoading && "Shorten URL"
+                            !hasSentForm && !isLoading && !error && "Shorten URL"
                         }
                         {
                             !hasSentForm && isLoading && <LoadingSpinner/>
                         }
                         {
                             hasSentForm && !isLoading && <Check size={28} className='text-green-500 bg-gray-800 p-1 rounded-full'/>
+                        }
+                        {
+                            !hasSentForm && !isLoading && error && <X size={28} className='text-red-500 bg-gray-800 p-1 rounded-full'/>
                         }
                         {
                             hasSentForm && error && <XIcon/>
