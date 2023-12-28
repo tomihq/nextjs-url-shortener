@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#year-range-start::after{
+    padding-left: 2px;
+    content: "-";
+    padding-right: 2px;
+}
