@@ -6,8 +6,8 @@ import ToasterProvider from '@/components/providers/ToasterProvider'
 
 
 export const metadata: Metadata = {
-  title: `QuickLink`,
-  description: 'Shorten and share links instantly with QuickLink. The perfect tool to make your URLs more manageable and shareable.',
+  title: `QuickLinkr`,
+  description: 'Shorten and share links instantly with QuickLinkr. The perfect tool to make your URLs more manageable and shareable.',
 }
 
 export default function RootLayout({
