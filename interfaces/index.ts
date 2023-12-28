@@ -1,2 +1,1 @@
-export * from './socialMedia'
-export * from './posts'
+export * from './forms'

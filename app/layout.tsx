@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { fontSans } from '@/assets/fonts'
 import Navbar from '@/components/navigation/Navbar'
+import ToasterProvider from '@/components/providers/ToasterProvider'
 
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fontSans.className}  flex flex-col w-full`}>
+      <body className={`${fontSans.className}   `}>
+        <ToasterProvider/>
         <Navbar/>
         {children}
         </body>
