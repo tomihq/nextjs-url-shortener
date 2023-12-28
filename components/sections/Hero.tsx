@@ -1,6 +1,5 @@
 import { ICON, ICON_FALLBACK, NAME } from "@/config"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
-import SocialMedia from "../social/SocialMedia"
 const Hero = () => {
   return (
     <header className="px-12 py-12 ">
@@ -14,12 +13,11 @@ const Hero = () => {
         </div>
         <div className="animate-fade-in-up">
           <p className="text-lg md:text-xl max-w-prose text-left text-gray-500 dark:text-gray-400">
-            I'm a software developer specialized in frontend and backend development for complex scalable web apps. I
+            I&apos;m a software developer specialized in frontend and backend development for complex scalable web apps. I
             write about software development on my blog. Want to know how I may help your project? Check out my project
             portfolio and online resume.
           </p>
         </div>
-          <SocialMedia/>
     </header>
   )
 }
