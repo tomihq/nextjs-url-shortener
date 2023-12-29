@@ -1,0 +1,1 @@
+export const QUICKLINKR_OG="https://tmhq.vercel.app/KNkeCOH"
