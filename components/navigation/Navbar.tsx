@@ -23,22 +23,22 @@ const Navbar = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href={PORTFOLIO}  passHref target="_blank">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link href={PORTFOLIO} legacyBehavior passHref >
+              <NavigationMenuLink target="_blank" className={navigationMenuTriggerStyle()}>
                 About
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href={LINKEDIN}  passHref target="_blank">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link href={LINKEDIN} legacyBehavior passHref >
+              <NavigationMenuLink target="_blank" className={navigationMenuTriggerStyle()}>
                 Contact
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href={PORTFOLIO}  passHref target="_blank">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link href={PORTFOLIO} legacyBehavior passHref >
+              <NavigationMenuLink target="_blank" className={navigationMenuTriggerStyle()}>
                 Portfolio
               </NavigationMenuLink>
             </Link>
